@@ -9,7 +9,7 @@ private:
     T array[];
 
 public:
-    Vector(int tamInicial) : tam(tamInicial), capacidad(2 * tamInicial)
+    Vector(int tamInicial) : tam(0), capacidad(2 * tamInicial)
     {
         array[capacidad];
     }
@@ -34,7 +34,7 @@ public:
             }
             capacidad *= 2;
         }
-        array[tam + 1] = elem;
+        array[tam] = elem;
         tam++;
     }
 
@@ -51,7 +51,7 @@ public:
 
 int main()
 {
-    Vector<int> *vec = new Vector<int>();
+    Vector<int> *vec = new Vector<int>(0);
     vec->addEnd(7);
     vec->addEnd(9);
     vec->addEnd(10);
